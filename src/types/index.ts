@@ -1,9 +1,15 @@
 interface Image {
-    url: string;
-    width: number;
-    height: number;
-    alt?: string;
-  }
+  url: string;
+  width?: number;
+  height?: number;
+  alt?: string;
+  formats?: {
+    thumbnail?: { url: string };
+    small?: { url: string };
+    medium?: { url: string };
+    large?: { url: string };
+  };
+}
   
   interface Hero {
     title: string;
@@ -24,7 +30,7 @@ interface Image {
   }
   
   export interface HeroProps {
-    data: Hero;
+    data: Hero[];
   }
   
   export interface ServicesProps {
